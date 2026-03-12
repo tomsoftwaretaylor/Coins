@@ -7,5 +7,52 @@
 </head>
 <body>
     <h1>Coin Actions</h1>
+
+    <br>
+    <br>
+
+    <!-- Shorthand way of chnageing the duisplayed image via buttons -->
+    <!-- 
+    <button id = "coinHeadID" onclick="{document.getElementById('coinImageID').src = 'images/headsTP.png';}" >Display Heads</button>
+    <button id = "coinTailID" onclick = "{document.getElementById('coinImageID').src = 'images/tailsTP.png';}" >Display Tails</button> 
+    -->
+
+    <button id = "coinHeadID">Display Heads</button>
+    <button id = "coinTailID">Display Tails</button>
+
+
+    <br> <br>
+
+    <!-- display the initial coin image -->
+    <img id="coinImageID" src= "images/tailsTP.png" alt="Coin Tails" height = "120px" >
+
+
+    <script>
+        // Get reference to the elements we will need for our code
+        const coinHeadButton = document.getElementById("coinHeadID");
+        const coinTailButton = document.getElementById("coinTailID");
+        const coinImage = document.getElementById("coinImageID");
+    
+        // Add event listeners to the buttons
+        coinHeadButton.addEventListener("click", showCoinHead);  // name of function to run when the button is clicked
+        coinTailButton.addEventListener("click", showCoinTail); 
+
+
+        function showCoinHead() {
+            coinImage.src = "images/headsTPx.png";  // change the image source to heads - note forward slashes are used in the path
+            coinImage.alt = "Coin Heads";  // change the alt text to match the new image
+        }   
+
+        function showCoinTail() {
+            coinImage.src = "images/tailsTPx.png";  // change the image source to tails
+            coinImage.alt = "Coin Tails";  // change the alt text to match the new image
+        }
+
+
+    </script>
+
 </body>
+
+
+
 </html>
